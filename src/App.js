@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
 function App() {
   return (
@@ -7,19 +8,12 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <h1> Hello from v2 </h1>
+          <h1> We have Auth !!</h1>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <AmplifySignOut />
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
